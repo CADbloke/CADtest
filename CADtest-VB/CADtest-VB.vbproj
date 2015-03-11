@@ -63,11 +63,13 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="accoremgd">
-      <HintPath>$(Codez)\z.Libraries\AutoCAD\2015\accoremgd.dll</HintPath>
+    <Reference Include="AcCoreMgd, Version=20.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoCAD.NET.Core.20.0.1\lib\45\AcCoreMgd.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="AcDbMgd">
-      <HintPath>$(Codez)\z.Libraries\AutoCAD\2015\AcDbMgd.dll</HintPath>
+      <HintPath>..\packages\AutoCAD.NET.Model.20.0.1\lib\45\AcDbMgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks">
