@@ -9,16 +9,26 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CADtest-VB", "CADtest-VB\CA
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Core Console|Any CPU = Debug Core Console|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		Release Core Console|Any CPU = Release Core Console|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05D392C8-2C76-4764-9ADE-1AEF6EB1943D}.Debug Core Console|Any CPU.ActiveCfg = Debug Core Console|Any CPU
+		{05D392C8-2C76-4764-9ADE-1AEF6EB1943D}.Debug Core Console|Any CPU.Build.0 = Debug Core Console|Any CPU
 		{05D392C8-2C76-4764-9ADE-1AEF6EB1943D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{05D392C8-2C76-4764-9ADE-1AEF6EB1943D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05D392C8-2C76-4764-9ADE-1AEF6EB1943D}.Release Core Console|Any CPU.ActiveCfg = Release Core Console|Any CPU
+		{05D392C8-2C76-4764-9ADE-1AEF6EB1943D}.Release Core Console|Any CPU.Build.0 = Release Core Console|Any CPU
 		{05D392C8-2C76-4764-9ADE-1AEF6EB1943D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05D392C8-2C76-4764-9ADE-1AEF6EB1943D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E466AA6E-66E2-44D9-BD55-F523B3FC82F8}.Debug Core Console|Any CPU.ActiveCfg = Debug Core Console|Any CPU
+		{E466AA6E-66E2-44D9-BD55-F523B3FC82F8}.Debug Core Console|Any CPU.Build.0 = Debug Core Console|Any CPU
 		{E466AA6E-66E2-44D9-BD55-F523B3FC82F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E466AA6E-66E2-44D9-BD55-F523B3FC82F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E466AA6E-66E2-44D9-BD55-F523B3FC82F8}.Release Core Console|Any CPU.ActiveCfg = Release Core Console|Any CPU
+		{E466AA6E-66E2-44D9-BD55-F523B3FC82F8}.Release Core Console|Any CPU.Build.0 = Release Core Console|Any CPU
 		{E466AA6E-66E2-44D9-BD55-F523B3FC82F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E466AA6E-66E2-44D9-BD55-F523B3FC82F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

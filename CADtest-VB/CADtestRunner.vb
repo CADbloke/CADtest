@@ -1,5 +1,8 @@
 ﻿' CADtest.NET by CAD bloke. http://CADbloke.com - See License.txt for license details
 
+#If CoreConsole Then
+Imports System
+#End If
 Imports CADtest.CADTestRunner
 Imports Autodesk.AutoCAD.Runtime
 Imports System.Collections.Generic

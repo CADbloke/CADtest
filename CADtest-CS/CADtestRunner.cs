@@ -1,5 +1,8 @@
 ﻿// CADtest.NET by CAD bloke. http://CADbloke.com - See License.txt for license details
 
+#if CoreConsole
+using System;
+#endif
 using Autodesk.AutoCAD.Runtime;
 using System.Collections.Generic;
 using System.IO;
