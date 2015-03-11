@@ -1,0 +1,210 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Applicability/=File/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Categories/=AutoCAD/@EntryIndexedValue">AutoCAD</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Categories/=Test/@EntryIndexedValue">Test</s:String>
+  <s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/CustomProperties/=Extension/@EntryIndexedValue">cs</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/CustomProperties/=FileName/@EntryIndexedValue">NewFile</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/CustomProperties/=ValidateFileName/@EntryIndexedValue">True</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Description/@EntryValue">CADtest class</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Field/=CLASS/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Field/=CLASS/Expression/@EntryValue">getFileNameWithoutExtension()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Field/=CLASS/Order/@EntryValue">2</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Field/=HEADER/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Field/=HEADER/Expression/@EntryValue">fileheader()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Field/=HEADER/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Field/=NAMESPACE/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Field/=NAMESPACE/Expression/@EntryValue">fileDefaultNamespace()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Field/=NAMESPACE/Order/@EntryValue">1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Scope/=E8F0594528C33E45BBFEC6CFE851095D/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Scope/=E8F0594528C33E45BBFEC6CFE851095D/Type/@EntryValue">InCSharpProjectFile</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=63A430EB6CBD234EBC696587434EC598/Text/@EntryValue">#define AutoCAD&#xD;
+$HEADER$&#xD;
+&#xD;
+using System;&#xD;
+using System.Collections.Generic;&#xD;
+using System.Diagnostics;&#xD;
+&#xD;
+#if BricsCAD&#xD;
+&#xD;
+using Bricscad.ApplicationServices.Application;&#xD;
+using Bricscad.ApplicationServices;&#xD;
+using Bricscad.EditorInput;&#xD;
+using Bricscad.Runtime; // bug: maybe wrong ??&#xD;
+using Bricscad.Windows;&#xD;
+using Bricscad;&#xD;
+using Teigha.Colors;&#xD;
+using Teigha.DatabaseServices;&#xD;
+using Teigha.Geometry;&#xD;
+using Teigha.GraphicsInterface;&#xD;
+using Teigha.Runtime;&#xD;
+using Teigha;&#xD;
+&#xD;
+#elif NANOCAD&#xD;
+using HostMgd.ApplicationServices.Application;&#xD;
+using HostMgd.ApplicationServices;&#xD;
+using HostMgd.EditorInput;&#xD;
+using HostMgd.Runtime; // bug: maybe wrong ??&#xD;
+using HostMgd.Windows;&#xD;
+using HostMgd;&#xD;
+using Teigha.Colors;&#xD;
+using Teigha.DatabaseServices;&#xD;
+using Teigha.Geometry;&#xD;
+using Teigha.GraphicsInterface;&#xD;
+using Teigha.Runtime;&#xD;
+using Teigha;&#xD;
+&#xD;
+#elif ARES&#xD;
+// todo:&#xD;
+&#xD;
+#elif ZWCAD&#xD;
+&#xD;
+#elif TURBOCAD // not likely at $500 for LTE Pro&#xD;
+&#xD;
+#elif DRAFTSIGHT&#xD;
+&#xD;
+#elif ACAD || AutoCAD&#xD;
+using Autodesk.AutoCAD.ApplicationServices;&#xD;
+using Autodesk.AutoCAD.Colors;&#xD;
+using Autodesk.AutoCAD.DatabaseServices;&#xD;
+using Autodesk.AutoCAD.EditorInput;&#xD;
+using Autodesk.AutoCAD.Geometry;&#xD;
+using Autodesk.AutoCAD.GraphicsInterface;&#xD;
+using Autodesk.AutoCAD.Internal;&#xD;
+using Autodesk.AutoCAD.Runtime;&#xD;
+using Autodesk.AutoCAD.Windows;&#xD;
+using Autodesk.AutoCAD;&#xD;
+// aliases&#xD;
+    #if (ACAD2006 || ACAD2007 || ACAD2008 || ACAD2009|| ACAD2010|| ACAD2011 || ACAD2012)&#xD;
+    using Autodesk.AutoCAD.ApplicationServices.Application;&#xD;
+    #else&#xD;
+    using Autodesk.AutoCAD.ApplicationServices.Core;&#xD;
+    #endif&#xD;
+#endif&#xD;
+&#xD;
+using NUnit.Framework; &#xD;
+&#xD;
+&#xD;
+namespace $NAMESPACE$&#xD;
+{&#xD;
+  [TestFixture, Apartment(ApartmentState.STA)]&#xD;
+  public class $CLASS$ &#xD;
+  {&#xD;
+  // todo: use CADtest R# shortcut to add Test Methods&#xD;
+  $END$&#xD;
+  }&#xD;
+}</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/Applicability/=Surround/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/Categories/=AutoCAD/@EntryIndexedValue">AutoCAD</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/Categories/=Test/@EntryIndexedValue">Test</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/Description/@EntryValue">CADtest surround</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/Field/=Test_005Fmethod_005Fname/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/Field/=Test_005Fmethod_005Fname/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/Scope/=C3001E7C0DA78E4487072B7E050D86C5/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/Scope/=C3001E7C0DA78E4487072B7E050D86C5/CustomProperties/=minimumLanguageVersion/@EntryIndexedValue">2.0</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/Scope/=C3001E7C0DA78E4487072B7E050D86C5/Type/@EntryValue">InCSharpFile</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A0D12789A8A55D498AF2A39CE3D83064/Text/@EntryValue">[Test]
+public void $Test_method_name$()
+{
+// Arrange
+  $END$
+// Act
+Database db = HostApplicationServices.WorkingDatabase;&#xD;
+Document doc = Application.DocumentManager.GetDocument(db);&#xD;
+using (doc.LockDocument())&#xD;
+{&#xD;
+ using (Transaction transaction = db.TransactionManager.StartTransaction())&#xD;
+ {&#xD;
+ $SELECTION$&#xD;
+ //todo: create object(s)&#xD;
+ Entity entity = new Entity(); // todo: change this to the type you are using&#xD;
+ //todo: add to DataBase&#xD;
+ //todo: Test Objects in the Database&#xD;
+ ObjectId entityObjectId = CADtest.Helpers.DbEntity.AddToModelSpace(entity, db);&#xD;
+ transaction.Commit();&#xD;
+ }&#xD;
+ Entity testEntity =  entityObjectId.Open(OpenMode.ForRead, false) as Entity; // todo: as above&#xD;
+ // todo: get properties to test&#xD;
+}
+// Assert
+  Assert.Fail("Write this test");
+}</s:String>
+	
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Categories/=AutoCAD/@EntryIndexedValue">AutoCAD</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Categories/=Test/@EntryIndexedValue">Test</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Description/@EntryValue">Class for NUnit Testing CAD stuffs</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Field/=CLASS/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Field/=CLASS/Expression/@EntryValue">JoarOyenLiveTemplateMacros.ValidIdentifier()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Field/=CLASS/Order/@EntryValue">1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Field/=NAMESPACE/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Field/=NAMESPACE/Expression/@EntryValue">fileDefaultNamespace()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Field/=NAMESPACE/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Scope/=C3001E7C0DA78E4487072B7E050D86C5/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Scope/=C3001E7C0DA78E4487072B7E050D86C5/CustomProperties/=minimumLanguageVersion/@EntryIndexedValue">2.0</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Scope/=C3001E7C0DA78E4487072B7E050D86C5/Type/@EntryValue">InCSharpFile</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Shortcut/@EntryValue">CADtestClass</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B39BBD61954E9545BCB69E5DB667D7D1/Text/@EntryValue">using NUnit.Framework; &#xD;
+&#xD;
+&#xD;
+namespace $NAMESPACE$&#xD;
+{&#xD;
+  [TestFixture]&#xD;
+  public class $CLASS$ &#xD;
+  {&#xD;
+  // todo: use CADtest R# shortcut to add Test Methods&#xD;
+  $END$&#xD;
+  }&#xD;
+}</s:String>
+
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Categories/=AutoCAD/@EntryIndexedValue">AutoCAD</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Categories/=Test/@EntryIndexedValue">Test</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Description/@EntryValue">CADtest test method, replaces spaces with underscores</s:String>
+	
+	
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Field/=Test_005Fmethod_005Fname/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Field/=Test_005Fmethod_005Fname/Expression/@EntryValue">JoarOyenLiveTemplateMacros.ValidIdentifier()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Field/=Test_005Fmethod_005Fname/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Scope/=C3001E7C0DA78E4487072B7E050D86C5/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Scope/=C3001E7C0DA78E4487072B7E050D86C5/CustomProperties/=minimumLanguageVersion/@EntryIndexedValue">2.0</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Scope/=C3001E7C0DA78E4487072B7E050D86C5/Type/@EntryValue">InCSharpFile</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Shortcut/@EntryValue">CADtest</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7ADA03151419D4EB2F142E78E6692C4/Text/@EntryValue">[Test]
+public void $Test_method_name$()
+{
+// Arrange
+  $END$
+// Act
+Database db = HostApplicationServices.WorkingDatabase;&#xD;
+Document doc = Application.DocumentManager.GetDocument(db);&#xD;
+using (doc.LockDocument())&#xD;
+{&#xD;
+ using (Transaction transaction = db.TransactionManager.StartTransaction())&#xD;
+ {&#xD;
+ $SELECTION$&#xD;
+ //todo: create object(s)&#xD;
+ Entity entity = new Entity(); // todo: change this to the type you are using&#xD;
+ //todo: add to DataBase&#xD;
+ //todo: Test Objects in the Database&#xD;
+ ObjectId entityObjectId = CADtest.Helpers.DbEntity.AddToModelSpace(entity, db);&#xD;
+ transaction.Commit();&#xD;
+ }&#xD;
+ Entity testEntity =  entityObjectId.Open(OpenMode.ForRead, false) as Entity; // todo: as above&#xD;
+ // todo: get properties to test&#xD;
+}
+// Assert
+  Assert.Fail("Write this test");
+}</s:String>
+
+  </wpf:ResourceDictionary>
