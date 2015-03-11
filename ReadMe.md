@@ -4,7 +4,7 @@
 **Open the Visual Studio 2013 Demo solution to see how this works **.
 You may want to fix the AutoCAD Project references - It is currently set to build AutoCAD 2015 and .NET 4.5 getting the references from Nuget.
 
-The first build should fetch the Buget packages. If the second build fails, restart Visual Studio - I don't think it loves mixed C# & VB Solutions.
+The first build should fetch the Nuget packages. If the second build fails, restart Visual Studio - I don't think it loves mixed C# & VB Solutions.
 
 #####To add the NUnitLite v3 Console runner to a Visual Studio project...
 1. There are folders for C# and VB projects. This was originally written in C# and converted to VB at http://converter.telerik.com/ so the VB code may look a bit too much like C#, it also may be missing updates that the C# code has because getting old absent minded.
