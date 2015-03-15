@@ -1,13 +1,11 @@
 ﻿' CADtest.NET by CAD bloke. http://CADbloke.com - See License.txt for license details
-
+Imports System.Collections.Generic
+Imports Autodesk.AutoCAD.ApplicationServices.Core
 Imports Autodesk.AutoCAD.DatabaseServices
 Imports Autodesk.AutoCAD.Geometry
 Imports Autodesk.AutoCAD.Runtime
-Imports System.Collections.Generic
-Imports Autodesk.AutoCAD.ApplicationServices.Core
 
-
-Namespace CADtest.Helpers
+Namespace Helpers
   ''' <summary> Static Helper methods to work with Block Definitions aka <see cref="BlockTableRecord"/>s. </summary>
   Public Class BlockDefinition
     ''' <summary> The X Position of the next Entity to be Inserted. </summary>
