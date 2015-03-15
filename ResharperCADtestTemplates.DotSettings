@@ -125,9 +125,9 @@ using (doc.LockDocument())&#xD;
  //todo: add to DataBase&#xD;
  //todo: Test Objects in the Database&#xD;
  ObjectId entityObjectId = CADtest.Helpers.DbEntity.AddToModelSpace(entity, db);&#xD;
- }&#xD;
  Entity testEntity =  entityObjectId.Open(OpenMode.ForRead, false) as Entity; // todo: as above&#xD;
  // todo: get properties to test&#xD;
+ }&#xD;
 }
 // Assert
   Assert.Fail("Write this test");
@@ -197,9 +197,9 @@ using (doc.LockDocument())&#xD;
  //todo: add to DataBase&#xD;
  //todo: Test Objects in the Database&#xD;
  ObjectId entityObjectId = CADtest.Helpers.DbEntity.AddToModelSpace(entity, db);&#xD;
- }&#xD;
  Entity testEntity =  entityObjectId.Open(OpenMode.ForRead, false) as Entity; // todo: as above&#xD;
  // todo: get properties to test&#xD;
+ }&#xD;
 }
 // Assert
   Assert.Fail("Write this test");
