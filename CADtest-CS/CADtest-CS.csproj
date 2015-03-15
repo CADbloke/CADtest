@@ -90,8 +90,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" Exclude="AssemblyInfo.cs" />
-    <!-- <Compile Include="**\*.cs" Exclude="AssemblyInfo.cs" /> because Visual Studio loves to obliterat these wildcard expressions-->
+    <Compile Include="**\*.cs" Exclude="AssemblyInfo.cs;**\Temp*.cs" />
+    <!-- <Compile Include="**\*.cs" Exclude="AssemblyInfo.cs" /> because Visual Studio loves to obliterate these wildcard expressions-->
     <!-- <Compile Include="Properties\AssemblyInfo.cs" /> the wildcard above includes this-->
   </ItemGroup>
   <ItemGroup>

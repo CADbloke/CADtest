@@ -132,7 +132,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <!-- <Compile Include="**\*.vb" Exclude="My Project\*.vb" />  because Visual Studio loves to obliterat these wildcard expressions-->
+    <!-- <Compile Include="**\*.vb" Exclude="My Project\*.vb" />  because Visual Studio loves to obliterate these wildcard expressions-->
     <Compile Include="**\*.vb" Exclude="My Project\*.vb" />
   </ItemGroup>
   <ItemGroup>
