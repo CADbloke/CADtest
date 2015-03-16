@@ -33,7 +33,7 @@ namespace NUnitAutoCADTestRunner
     [Test]
     public void Test_method_should_fail()
     {
-      Assert.Fail("Test was supposed to fail.");
+      Assert.Fail("This test was supposed to fail.");
     }
     
     [Test]
@@ -44,23 +44,21 @@ namespace NUnitAutoCADTestRunner
       Document doc = Application.DocumentManager.GetDocument(db);
       DBText dbText = new DBText {TextString = "cat"};
       string testMe;
-      ObjectId dbTextObjectID; 
 // Act
       using (doc.LockDocument())
-      { 
-        using (Transaction transaction = db.TransactionManager.StartTransaction())
+      {
+        using (db.TransactionManager.StartTransaction())
         {
-          dbTextObjectID = DbEntity.AddToModelSpace(dbText, db);
+          ObjectId dbTextObjectId = DbEntity.AddToModelSpace(dbText, db);
           dbText.TextString = "dog";
-          transaction.Commit();
+
+          DBText testText = dbTextObjectId.Open(OpenMode.ForRead, false) as DBText;
+          testMe = testText != null ? testText.TextString : string.Empty;
         }
-#pragma warning disable 618
-        DBText testText =  dbTextObjectID.Open(OpenMode.ForRead, false) as DBText;
-#pragma warning restore 618
-        testMe = testText != null ? testText.TextString : string.Empty;
-// Assert
-        StringAssert.AreEqualIgnoringCase("dog", testMe, "Failed String Assertion");
       }
+// Assert
+      StringAssert.AreEqualIgnoringCase("dog", testMe, "DBText string was not changed to \"dog\".");
+      StringAssert.AreNotEqualIgnoringCase("cat", testMe, "DBText string was not changed.");
     }
   }
 }
