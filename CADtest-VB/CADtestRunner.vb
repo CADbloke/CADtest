@@ -26,6 +26,11 @@ Namespace CADTestRunner
       }.ToArray()
 
       Call New NUnitLite.Runner.TextUI().Execute(nunitArgs)
+
+      ' NOTE: BREAKING CHANGE
+      ' new NUnitLite.Runner.AutoRun().Execute(nunitArgs); todo: Coming soon in NUnit V3 Beta 1. 
+      ' https://github.com/nunit/nunit/commit/6331e7e694439f8cbf000156f138a3e10370ec40
+
 #If CoreConsole Then
 			Console.WriteLine("Press Enter to Close this")
 			Console.ReadLine()

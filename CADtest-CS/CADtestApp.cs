@@ -2,8 +2,8 @@
 
 using System;
 using System.Runtime.InteropServices;
+using Autodesk.AutoCAD.ApplicationServices.Core;
 using Autodesk.AutoCAD.Runtime;
-
 
 [assembly: ExtensionApplication(typeof (CADTestRunner.NUnitRunnerApp))]
 
@@ -16,7 +16,23 @@ namespace CADTestRunner
     public void Initialize()
     {
 #if !CoreConsole
-      AllocConsole();
+      if ( !AttachConsole(-1) )  // Attach to a parent process console
+      AllocConsole(); // Alloc a new console if none available
+
+#else
+// http://forums.autodesk.com/t5/net/accoreconsole-exe-in-2015-doesn-t-do-system-console-writeline/m-p/5551652
+// This code is so you can see the test results in the console window, as per the above forum thread.
+      if (Application.Version.Major * 10 + Application.Version.Minor > 190) // >v2013
+      {
+        // http://stackoverflow.com/a/15960495/492
+        // stdout's handle seems to always be equal to 7
+        IntPtr defaultStdout = new IntPtr(7);
+        IntPtr currentStdout = GetStdHandle(StdOutputHandle);
+        if (currentStdout != defaultStdout) { SetStdHandle(StdOutputHandle, defaultStdout); }
+        
+// http://forums.autodesk.com/t5/net/accoreconsole-exe-in-2015-doesn-t-do-system-console-writeline/m-p/5551652#M43708
+        FixStdOut();
+      }
 #endif
     }
 
@@ -31,16 +47,33 @@ namespace CADTestRunner
 
 
 // http://stackoverflow.com/questions/3917202/how-do-i-include-a-console-in-winforms/3917353#3917353
-// http://web.archive.org/web/20100815055904/http://www.thereforesystems.com/output-to-console-in-windows-forms-application
-// http://www.codeproject.com/Questions/229000/Will-Console-writeline-work-in-Windows-Application
-
     /// <summary> Allocates a new console for current process. </summary>
     [DllImport("kernel32.dll")]
     public static extern Boolean AllocConsole();
 
-
     /// <summary> Frees the console. </summary>
     [DllImport("kernel32.dll")]
     public static extern Boolean FreeConsole();
+
+    // http://stackoverflow.com/a/8048269/492
+    [DllImport("kernel32.dll")]
+    private static extern bool AttachConsole(int pid);
+
+
+#if CoreConsole
+// http://forums.autodesk.com/t5/net/accoreconsole-exe-in-2015-doesn-t-do-system-console-writeline/m-p/5551652#M43708
+// trying to fix the telex-like line output from Core Console in versions > 2013. This didn't work for me. :(
+    [DllImport("msvcr110.dll")]
+    private static extern int _setmode(int fileno, int mode);
+    public void FixStdOut() { _setmode(3, 0x4000); }
+
+
+// http://stackoverflow.com/a/15960495/492
+    private const UInt32 StdOutputHandle = 0xFFFFFFF5;
+    [DllImport("kernel32.dll")]
+    private static extern IntPtr GetStdHandle(UInt32 nStdHandle);
+    [DllImport("kernel32.dll")]
+    private static extern void SetStdHandle(UInt32 nStdHandle, IntPtr handle);
+#endif
   }
 }
