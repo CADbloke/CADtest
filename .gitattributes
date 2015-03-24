@@ -1,0 +1,2 @@
+*.vb linguist-language=C#
+# this is so Github doesn't tag this repo as VB - it is primarily C#
