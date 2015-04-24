@@ -4,6 +4,8 @@
 
 My Thanks and Kudos also go the the ever-resourceful AutoCAD developer crowd at [The Swamp](http://www.theswamp.org/index.php) and the [Autodesk forums](http://forums.autodesk.com/t5/net/bd-p/152)
 
+#####This project is a little bit broken at the moment, mostly because I broke it. I switched from AutoCAD 2013 to 2015 which changes the .NET Framework from 4.0 to 4.5. That broke the NUnit Nuget stuff which I haven't fixed yet, I am waiting for the next NUnit release but don't go blaming them because AWESOME takes time and they are doing lots of it. With luck, I will get back into this in July 2015 unless SQUIRREL
+
 ####Getting Started
 You will, of course, need AutoCAD installed to use this. No, it won't work in AutoCAD LT,
 Yes, it should work in NanoCAD, BricsCAD etc. with the right references, I am yet to try that, if you do, please let us know how you go.
