@@ -2,6 +2,8 @@
 ####CADtest runs [NUnitLite](http://www.nunit.org/index.php?p=nunitlite&r=3.0) [version 3](https://www.nuget.org/packages/NUnitLite) inside [AutoCAD](http://www.autodesk.com/products/autocad/overview) and/or the [AutoCAD Core Console](http://through-the-interface.typepad.com/through_the_interface/2012/02/the-autocad-2013-core-console.html)
 ####This project is only possible because of all the hard work done over the years by [Charlie Poole](http://www.charliepoole.org/) and the [NUnit](http://www.nunit.org/) team, this is 99.999% [their work](https://github.com/nunit), all I did was plug it in to AutoCAD.
 
+If you're a Revit user - check out https://github.com/DynamoDS/RevitTestFramework
+
 [![Join the chat at https://gitter.im/CADbloke/CADtest](https://badges.gitter.im/CADbloke/CADtest.svg)](https://gitter.im/CADbloke/CADtest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 My Thanks and Kudos also go the the ever-resourceful AutoCAD developer crowd at [The Swamp](http://www.theswamp.org/index.php) and the [Autodesk forums](http://forums.autodesk.com/t5/net/bd-p/152)
