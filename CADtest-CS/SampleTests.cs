@@ -36,29 +36,29 @@ namespace NUnitAutoCADTestRunner
       Assert.Fail("This test was supposed to fail.");
     }
     
-    [Test]
-    public void Test_method_name()
-    {
-// Arrange
-      Database db = HostApplicationServices.WorkingDatabase;
-      Document doc = Application.DocumentManager.GetDocument(db);
-      DBText dbText = new DBText {TextString = "cat"};
-      string testMe;
-// Act
-      using (doc.LockDocument())
-      {
-        using (db.TransactionManager.StartTransaction())
-        {
-          ObjectId dbTextObjectId = DbEntity.AddToModelSpace(dbText, db);
-          dbText.TextString = "dog";
+    //[Test]
+//    public void Test_method_name()
+//    {
+//// Arrange
+//      Database db = HostApplicationServices.WorkingDatabase;
+//      Document doc = Application.DocumentManager.GetDocument(db);
+//      DBText dbText = new DBText {TextString = "cat"};
+//      string testMe;
+//// Act
+//      using (doc.LockDocument())
+//      {
+//        using (db.TransactionManager.StartTransaction())
+//        {
+//          ObjectId dbTextObjectId = DbEntity.AddToModelSpace(dbText, db);
+//          dbText.TextString = "dog";
 
-          DBText testText = dbTextObjectId.Open(OpenMode.ForRead, false) as DBText;
-          testMe = testText != null ? testText.TextString : string.Empty;
-        }
-      }
-// Assert
-      StringAssert.AreEqualIgnoringCase("dog", testMe, "DBText string was not changed to \"dog\".");
-      StringAssert.AreNotEqualIgnoringCase("cat", testMe, "DBText string was not changed.");
-    }
+//          DBText testText = dbTextObjectId.Open(OpenMode.ForRead, false) as DBText;
+//          testMe = testText != null ? testText.TextString : string.Empty;
+//        }
+//      }
+//// Assert
+//      StringAssert.AreEqualIgnoringCase("dog", testMe, "DBText string was not changed to \"dog\".");
+//      StringAssert.AreNotEqualIgnoringCase("cat", testMe, "DBText string was not changed.");
+//    }
   }
 }

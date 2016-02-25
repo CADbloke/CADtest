@@ -8,7 +8,6 @@ Imports Autodesk.AutoCAD.Runtime
 Imports System.Collections.Generic
 Imports System.IO
 Imports System.Reflection
-Imports NUnitLite.Runner
 
 
 <Assembly: CommandClass(GetType(NUnitLiteTestRunner))> 
@@ -29,7 +28,7 @@ Namespace CADTestRunner
       ' --work= ...   save TestResults.xml to the build folder
       ' --wait        Wait for input before closing console window. (PAUSE). Comment this out for batch operations.
 
-      Call New NUnitLite.Runner.TextUI().Execute(nunitArgs)
+      Call New NUnitLite.AutoRun().Execute(nunitArgs) 
 
       ' NOTE: BREAKING CHANGE
       ' new NUnitLite.Runner.AutoRun().Execute(nunitArgs); todo: Coming soon in NUnit V3 Beta 1. 

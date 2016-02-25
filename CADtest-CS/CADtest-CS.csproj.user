@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug Core Console|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>C:\Program Files\Autodesk\AutoCAD 2015\accoreconsole.exe</StartProgram>
+    <StartProgram>C:\Program Files\Autodesk\AutoCAD 2016\accoreconsole.exe</StartProgram>
     <StartArguments>/s C:\Codez\CadBloke\GitHub\CADtest\CADtest-CS\AutoNetLoadCoreConsole2015.scr /isolate</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
