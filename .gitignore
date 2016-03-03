@@ -1,3 +1,4 @@
 obj/
 bin/
+packages/
 *.DS_Store
