@@ -1,7 +1,6 @@
 ﻿// CADtest.NET by CAD bloke. http://CADbloke.com - See License.txt for license details
 
 #if CoreConsole
-using System;
 #endif
 using System;
 using Autodesk.AutoCAD.Runtime;

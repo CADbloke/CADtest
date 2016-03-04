@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CADtest-CS", "CADtest-CS\CADtest-CS.csproj", "{05D392C8-2C76-4764-9ADE-1AEF6EB1943D}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CADtest-VB", "CADtest-VB\CADtest-VB.vbproj", "{E466AA6E-66E2-44D9-BD55-F523B3FC82F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CADtest-CS 2013-14", "CADtest-CS\CADtest-CS 2013-14.csproj", "{584C5F09-136B-4356-B6E9-C99A8CB90AF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{E466AA6E-66E2-44D9-BD55-F523B3FC82F8}.Release Core Console|Any CPU.Build.0 = Release Core Console|Any CPU
 		{E466AA6E-66E2-44D9-BD55-F523B3FC82F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E466AA6E-66E2-44D9-BD55-F523B3FC82F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{584C5F09-136B-4356-B6E9-C99A8CB90AF3}.Debug Core Console|Any CPU.ActiveCfg = Debug Core Console|Any CPU
+		{584C5F09-136B-4356-B6E9-C99A8CB90AF3}.Debug Core Console|Any CPU.Build.0 = Debug Core Console|Any CPU
+		{584C5F09-136B-4356-B6E9-C99A8CB90AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{584C5F09-136B-4356-B6E9-C99A8CB90AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{584C5F09-136B-4356-B6E9-C99A8CB90AF3}.Release Core Console|Any CPU.ActiveCfg = Release Core Console|Any CPU
+		{584C5F09-136B-4356-B6E9-C99A8CB90AF3}.Release Core Console|Any CPU.Build.0 = Release Core Console|Any CPU
+		{584C5F09-136B-4356-B6E9-C99A8CB90AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{584C5F09-136B-4356-B6E9-C99A8CB90AF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
