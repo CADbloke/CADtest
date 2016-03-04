@@ -23,7 +23,6 @@ using System.IO;
 using System.Reflection;
 
 namespace NUnitAutoCADTestRunner
-
 {
     [TestFixture, Apartment(ApartmentState.STA)]
     public class TestClass1 : BaseTests
@@ -56,7 +55,7 @@ namespace NUnitAutoCADTestRunner
                 {
                     Assert.Fail("ObjectID doesn't exist");
                 }
-                
+
                 Line line = trans.GetObject(objectId, OpenMode.ForWrite) as Line;
 
                 Assert.IsNotNull(line, "Line didn't found");
@@ -114,29 +113,27 @@ namespace NUnitAutoCADTestRunner
             ExecuteActionDWG(null, action1, action2);
         }
 
-        //[Test]
-        //    public void Test_method_name()
-        //    {
-        //// Arrange
-        //      Database db = HostApplicationServices.WorkingDatabase;
-        //      Document doc = Application.DocumentManager.GetDocument(db);
-        //      DBText dbText = new DBText {TextString = "cat"};
-        //      string testMe;
-        //// Act
-        //      using (doc.LockDocument())
-        //      {
-        //        using (db.TransactionManager.StartTransaction())
-        //        {
-        //          ObjectId dbTextObjectId = DbEntity.AddToModelSpace(dbText, db);
-        //          dbText.TextString = "dog";
+        [Test]
+        public void Test_method_name()
+        {
+            Action<Database, Transaction> action1 = (db, trans) =>
+            {
+                DBText dbText = new DBText { TextString = "cat" };
+                string testMe;
 
-        //          DBText testText = dbTextObjectId.Open(OpenMode.ForRead, false) as DBText;
-        //          testMe = testText != null ? testText.TextString : string.Empty;
-        //        }
-        //      }
-        //// Assert
-        //      StringAssert.AreEqualIgnoringCase("dog", testMe, "DBText string was not changed to \"dog\".");
-        //      StringAssert.AreNotEqualIgnoringCase("cat", testMe, "DBText string was not changed.");
-        //    }
+                ObjectId dbTextObjectId = DbEntity.AddToModelSpace(dbText, db);
+                dbText.TextString = "dog";
+
+                DBText testText =  trans.GetObject(dbTextObjectId, OpenMode.ForRead) as DBText;
+                testMe = testText != null ? testText.TextString : string.Empty;
+
+                // Assert
+                StringAssert.AreEqualIgnoringCase("dog", testMe, "DBText string was not changed to \"dog\".");
+                StringAssert.AreNotEqualIgnoringCase("cat", testMe, "DBText string was not changed.");
+            };
+
+            ExecuteActionDWG(null, action1);
+
+        }
     }
 }
