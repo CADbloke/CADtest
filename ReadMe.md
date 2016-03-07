@@ -6,16 +6,16 @@ If you're a Revit user - check out https://github.com/DynamoDS/RevitTestFramewor
 
 [![Join the chat at https://gitter.im/CADbloke/CADtest](https://badges.gitter.im/CADbloke/CADtest.svg)](https://gitter.im/CADbloke/CADtest?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-My Thanks and Kudos also go the the ever-resourceful AutoCAD developer crowd at [The Swamp](http://www.theswamp.org/index.php) and the [Autodesk forums](http://forums.autodesk.com/t5/net/bd-p/152)
-
-#####This project is a little bit broken at the moment, ~~mostly because I broke it~~. I switched from AutoCAD 2013 to 2015 which changes the .NET Framework from 4.0 to 4.5. That broke the NUnit Nuget stuff which I have fixed but AutoCAD 2016's Core Console is even more unruly than the last one. With luck, I will get back into this in July ~~2015~~ 2016 unless SQUIRREL
+My Thanks and Kudos also go the the ever-resourceful AutoCAD developer crowd at [The Swamp](http://www.theswamp.org/index.php) and the [Autodesk forums](http://forums.autodesk.com/t5/net/bd-p/152) and to [@phliberato](https://github.com/phliberato) for his contributions.
 
 ####Getting Started
+This is meant to be a *how-to* example rather than a full implementation that you can just drop more tests into. Take a look at the code and how it works, take what you like and ignore what you don't.
+
 You will, of course, need AutoCAD installed to use this. No, it won't work in AutoCAD LT,
 Yes, it should work in NanoCAD, BricsCAD etc. with the right references, I am yet to try that, if you do, please let us know how you go.
 
-**Open the Visual Studio 201~~3~~5 Demo solution to see how this works**.
-You may want to change the AutoCAD Project references - It is currently set to build AutoCAD 2016 and .NET 4.5, getting the references from Nuget.
+**Open the Visual Studio 2013 Demo solution to see how this works**.
+You may want to change the AutoCAD Project references - It is currently set to build AutoCAD 2016 and .NET 4.5, getting the references from Nuget. There are projects for other versions of AutoCAD in there too, they will need some tweakage to get working.
 
 The first build should fetch the Nuget packages. If the second build fails, restart Visual Studio or close the Solution and re-open it, I don't think it loves mixed C# & VB Solutions.
 
