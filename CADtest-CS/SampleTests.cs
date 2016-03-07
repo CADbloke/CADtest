@@ -137,23 +137,29 @@ namespace NUnitAutoCADTestRunner
         }
 
         [Test]
-        public void Old_Test_That_Crashes_2016_but_not_2013()
+        public void Old_Test_That_Used_to_Crash_2016_and_not_2013_but_I_fixed_it()
         {
             // Arrange
             Database db = HostApplicationServices.WorkingDatabase;
             Document doc = Application.DocumentManager.GetDocument(db);
-            DBText dbText = new DBText { TextString = "cat" };
+            
             string testMe;
             // Act
             using (doc.LockDocument())
             {
-                using (db.TransactionManager.StartTransaction())
+                using (var tx = db.TransactionManager.StartTransaction())
                 {
-                    ObjectId dbTextObjectId = DbEntity.AddToModelSpace(dbText, db);
-                    dbText.TextString = "dog";
+                    using (DBText dbText = new DBText { TextString = "cat" })
+                    {
+                        ObjectId dbTextObjectId = DbEntity.AddToModelSpace(dbText, db);
+                        dbText.TextString = "dog";
 
-                    DBText testText = dbTextObjectId.Open(OpenMode.ForRead, false) as DBText;
-                    testMe = testText != null ? testText.TextString : string.Empty;
+                        var testText = dbTextObjectId.Open(OpenMode.ForRead, false) as DBText;
+                        testMe = testText != null
+                                     ? testText.TextString
+                                     : string.Empty;
+                    }
+                    tx.Commit();
                 }
             }
             // Assert
