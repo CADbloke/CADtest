@@ -116,9 +116,9 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="ReportUnit\ReportUnit.exe">
+    <Content Include="..\packages\ReportUnit*\tools\ReportUnit.exe">
+      <Link>ReportUnit\ReportUnit.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
