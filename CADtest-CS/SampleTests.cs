@@ -167,6 +167,16 @@ namespace NUnitAutoCADTestRunner
             StringAssert.AreNotEqualIgnoringCase("cat", testMe, "DBText string was not changed.");
         }
 
+        [Test, TestCaseSource(typeof(SampleTestsData), "ParametersTest")]
+        public void Test_method_TestCaseSource(Point3d pPoint1, Point3d pPoint2, Point3d pPointResult)
+        {
+            List<Point3d> listPoints = new List<Point3d> (){pPoint1, pPoint2};
+            Point3d centerPoint = new Point3d(listPoints.Average(p => p.X), listPoints.Average(p => p.Y), listPoints.Average(p => p.Z));
+
+            Assert.IsTrue(centerPoint.DistanceTo(pPointResult) < 1E-5);
+
+        }
+
     }
     
   }
