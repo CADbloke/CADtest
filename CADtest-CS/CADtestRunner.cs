@@ -26,6 +26,7 @@ namespace CADTestRunner
 
             string directoryPlugin = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string directoryReportUnit = Path.Combine(directoryPlugin, @"ReportUnit");
+            Directory.CreateDirectory(directoryReportUnit);
             string fileInputXML = Path.Combine(directoryReportUnit, @"Report-NUnit.xml");
             string fileOutputHTML = Path.Combine(directoryReportUnit, @"Report-NUnit.html");
             string generatorReportUnit = Path.Combine(directoryPlugin, @"ReportUnit", @"ReportUnit.exe");
