@@ -33,8 +33,8 @@ namespace CADTestRunner
 
             string[] nunitArgs = new List<string>
                 {
-                    // for details of options see  http://www.nunit.com/index.php?p=nunitliteOptions&r=3.0
-                    "--verbose" // Tell me everything
+                    // for details of options see  https://github.com/nunit/docs/wiki/Console-Command-Line
+                    "--trace=verbose" // Tell me everything
                    ,"--result=" + fileInputXML
                     // , "--work=" + directoryName // save TestResults.xml to the build folder
                     // , "--wait" // Wait for input before closing console window (PAUSE). Comment this out for batch operations.
